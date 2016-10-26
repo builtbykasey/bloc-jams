@@ -28,6 +28,21 @@ var albumMarconi = {
     ]
 };
 
+var albumKanye = {
+    title: 'The Artist', 
+    artist: 'Kanye East', 
+    label: 'Rock',
+    year: '2017', 
+    albumArtUrl: 'assets/images/album_covers/18.png',
+    songs: [
+        { title: 'Black Stripes', duration: '3:01' },
+        { title: 'Bling, bling, bling', duration: '4:23' }, 
+        { title: 'Yeezus', duration: '5:21' },
+        { title: 'Can you see me now?', duration: '3:52' },
+        { title: 'Lookin at me', duration: '4:15'}
+    ]
+};
+
 var createSongRow = function(songNumber, songName, songLength) {
     var template = 
     '<tr class="album-view-song-item">'
@@ -40,12 +55,13 @@ var createSongRow = function(songNumber, songName, songLength) {
     return template;    
 };
 
+var albumTitle = document.getElementsByClassName('album-view-title')[0];
+var albumArtist = document.getElementsByClassName('album-view-artist')[0];
+var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+var albumImage = document.getElementsByClassName('album-cover-art')[0];
+var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+
 var setCurrentAlbum = function(album) {
-    var albumTitle = document.getElementsByClassName('album-view-title')[0];
-    var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-    var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-    var albumImage = document.getElementsByClassName('album-cover-art')[0];
-    var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
     
     albumTitle.firstChild.nodeValue = album.title;
     albumArtist.firstChild.nodeValue = album.artist;
@@ -61,4 +77,15 @@ var setCurrentAlbum = function(album) {
 
 window.onload = function() {
     setCurrentAlbum(albumPicasso);
+    
+    var toggleList = [albumPicasso, albumMarconi, albumKanye];
+    var i = 1;
+    albumImage.addEventListener('click', function(event) {
+        setCurrentAlbum(toggleList[i]); 
+        i++
+        if (i == toggleList.length) {
+            i = 0;
+        }
+    });
 };
+
