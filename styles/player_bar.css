@@ -121,7 +121,10 @@
     cursor: pointer;
     -webkit-transistion: all 100ms ease-in-out;
         -moz-transistion: all 100ms ease-in-out;
-            transistion: all 100ms ease-in-out;
+            transistion:    width 100ms ease-in-out,
+                            height 100ms ease-in-out,
+                            margin-top 100ms ease-in-out,
+                            margin-left 100ms ease-in-out;
 }
 
 .seek-bar:hover .thumb {
