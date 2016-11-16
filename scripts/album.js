@@ -190,6 +190,24 @@ var setupSeekBars = function() {
     });
 };
 
+// 1 - Write a function called setCurrentTimeInPlayerBar() that takes one argument, currentTime, that sets the text of the element with the .current-time class to the current time in the song.
+
+var setCurrentTimeInPlayerBar = function(currentTime) {
+    
+};
+
+// 2 - Write a function called setTotalTimeInPlayerBar() that takes one argument, totalTime, that sets the text of the element with the .total-time class to the length of the song.
+
+var setTotalTimeInPlayerBar = function(totalTime) {
+    
+};
+
+// 3 - Write a function called filterTimeCode that takes one argument, timeInSeconds.
+
+var filterTimeCode = function(timeInSeconds) {
+    
+};
+
 var trackIndex = function(album, song) {
     return album.songs.indexOf(song);
 };
