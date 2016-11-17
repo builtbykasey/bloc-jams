@@ -105,13 +105,15 @@ var createSongRow = function(songNumber, songName, songLength) {
 //Write a function so that users can play and pause a song from the bar, as shown in the demo above. The function should be named togglePlayFromPlayerBar(), take no arguments, and have the following behavior:
 
 var togglePlayFromPlayerBar = function() {
-        
+    
+    var currentlyPlayingCell = getSongNumberCell(currentlyPlayingSongNumber);
+    
     if (currentSoundFile.isPaused()) {
-        $('.song-item-number').html(pauseButtonTemplate);
+        currentlyPlayingCell.html(pauseButtonTemplate);
         $playPause.html(playerBarPauseButton);
         currentSoundFile.play();
     } else {
-        $('.song-item-number').html(playButtonTemplate);
+        currentlyPlayingCell.html(playButtonTemplate);
         $playPause.html(playerBarPlayButton);
         currentSoundFile.pause();
     }
